@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahammad Safwan | Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Your Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* 🔧 Fix LinkedIn link not clickable */
+    #star-background {
+      pointer-events: none;
+    }
+
+    .navbar, .nav-links a {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Animated Background -->
+  <div id="star-background"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2>Mahammad Safwan</h2>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- ✅ Fixed LinkedIn link -->
+        <li>
+          <a href="http://linkedin.com/in/mahammadsafwan" 
+             target="_blank" 
+             rel="noopener noreferrer">
+             <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </li>
+      </ul>
+      <button id="theme-toggle">🌙</button>
+      <div class="menu-toggle">☰</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hello, I'm <span>Mahammad Safwan</span></h1>
+      <p>Passionate Developer | Full-Stack Enthusiast | Problem Solver</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="primary">Contact Me</a>
+        <a href="assets/safwan.pdf" class="secondary" target="_blank">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="assets/safwan1.JPG" alt="Profile">
+      <div class="hero-badge">🚀 Full-Stack Dev</div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="about-text">
+      Hi, I’m Mahammad Safwan, a passionate learner with a keen interest in Data Analytics and Cloud Computing. 
+      I thrive on solving complex problems and building efficient, scalable solutions. 
+      My goal is to leverage technology to create meaningful impact.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Bridge Management System</h3>
+        <p class="desc light">The bridge management system uses Arduino, IR sensors, and a servo motor to automate drawbridge operation, enhancing traffic management and safety with alerts like lights and buzzers.</p>
+        <p class="desc dark">Automated drawbridge using Arduino + sensors. Detects vehicles, lifts/lowers bridge, and alerts with buzzer/lights for safety.</p>
+      </div>
+      <div class="project-card">
+        <h3>Turf Management System</h3>
+        <p class="desc light">Developed a DBMS-based Turf Management System to automate booking, scheduling, and payments, ensuring secure data management, reduced errors, and improved efficiency for administrators.</p>
+        <p class="desc dark">DBMS-based turf booking system with automated scheduling, secure payments, and admin reporting for improved efficiency.</p>
+      </div>
+      <div class="project-card">
+        <h3>Women in Safe Environment</h3>
+        <p class="desc light">A mobile and web platform designed to enhance women’s safety. Features include an SOS button that shares live location with trusted contacts, safe route mapping, and real-time alerts.</p>
+        <p class="desc dark">Safety app with SOS alerts, live location sharing, safe route mapping, and geo-fenced danger zone notifications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skill Arsenal</h2>
+    <div class="skills-layout">
+        <div class="skills-category technical-skills">
+            <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-python"></i> Python</span><span class="skill-percent">80%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div></div>
+            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-java"></i> Java</span><span class="skill-percent">60%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 60%;"></div></div></div>
+            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fas fa-database"></i> SQL</span><span class="skill-percent">88%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 88%;"></div></div></div>
+            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-js"></i> JavaScript</span><span class="skill-percent">50%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 50%;"></div></div></div>
+            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fa-solid fa-c"></i> C</span><span class="skill-percent">85%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div></div>
+            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-html5"></i> HTML/CSS</span><span class="skill-percent">92%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 92%;"></div></div></div>
+        </div>
+        <div class="skills-category soft-skills">
+            <h3><i class="fas fa-users"></i> Soft Skills</h3>
+            <div class="soft-skill">💡 Problem Solving</div>
+            <div class="soft-skill">👥 Teamwork</div>
+            <div class="soft-skill">🧭 Leadership</div>
+            <div class="soft-skill">🔄 Adaptability</div>
+            <div class="soft-skill">🗣️ Communication</div>
+            <div class="soft-skill">💡 Innovation</div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="contact-title">Contact Me</h2>
+    <p class="contact-subtitle">Ready to collaborate? Let's create something amazing together.</p>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Let's Start a Conversation</h3>
+        <p>I'm open to discussing new opportunities, innovative projects, and collaborations. Feel free to reach out!</p>
+
+        <div class="info-item"><span class="icon">📧</span><div><h4>Email</h4><p>mahammadsafwn303@gmail.com</p></div></div>
+        <div class="info-item"><span class="icon">📞</span><div><h4>Phone</h4><p>+91 9591574151</p></div></div>
+        <div class="info-item"><span class="icon">📍</span><div><h4>Location</h4><p>Mangalore, Karnataka, India</p></div></div>
+
+        <!-- ✅ Fixed LinkedIn -->
+        <div class="info-item">
+          <span class="icon"><i class="fab fa-linkedin"></i></span>
+          <div>
+            <h4>LinkedIn</h4>
+            <p><a href="http://linkedin.com/in/mahammadsafwan" 
+                  target="_blank" 
+                  rel="noopener noreferrer">View Profile</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h3>Send me a message</h3>
+        <form id="contact-form">
+          <div class="row">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          
+          <button type="submit" class="btn-submit">✈️ Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Your Script -->
+  <script src="script.js"></script>
+</body>
+</html>
