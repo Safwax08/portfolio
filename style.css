@@ -370,6 +370,28 @@ body.dark .soft-skill:hover { background: var(--dark-primary-color); color: var(
 .contact-info h3 { margin-bottom: 20px; font-size: 1.5rem; }
 .info-item { display: flex; align-items: center; margin-bottom: 25px; }
 .info-item .icon { font-size: 1.5rem; margin-right: 15px; }
+.github-icon {
+  color: #333;
+  transition: color 0.3s;
+}
+.github-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.github-link:hover, .github-icon:hover {
+  color: var(--primary-color);
+}
+body.dark .github-icon {
+  color: #c9d1d9;
+}
+body.dark .github-link {
+  color: #c9d1d9;
+}
+body.dark .github-link:hover, body.dark .github-icon:hover {
+  color: var(--dark-primary-color);
+}
 
 .contact-form-card h3 { font-size: 1.5rem; margin-bottom: 20px; }
 .contact-form-card .row { display: flex; gap: 15px; margin-bottom: 15px; }
