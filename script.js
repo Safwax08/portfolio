@@ -63,3 +63,58 @@ window.onload = function() {
         });
     }
 }
+
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+const bubbles = document.querySelectorAll('.cursor-bubble');
+
+const coords = { x: 0, y: 0 };
+const bubbleCoords = [];
+
+bubbles.forEach((bubble, index) => {
+  const size = (bubbles.length - index) * 2;
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubbleCoords.push({ x: 0, y: 0 });
+  bubble.style.transitionDelay = `${index * 0.02}s`;
+});
+
+window.addEventListener('mousemove', function (e) {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+});
+
+let animationFrameId;
+
+function animateBubbles() {
+    let x = coords.x;
+    let y = coords.y;
+
+    cursorDot.style.left = `${x}px`;
+    cursorDot.style.top = `${y}px`;
+
+    cursorOutline.style.left = `${x}px`;
+    cursorOutline.style.top = `${y}px`;
+
+    bubbleCoords.unshift({x: x, y: y});
+    if (bubbleCoords.length > bubbles.length) {
+        bubbleCoords.pop();
+    }
+
+    bubbles.forEach((bubble, index) => {
+        const coord = bubbleCoords[index];
+        if (coord) {
+            bubble.style.left = `${coord.x}px`;
+            bubble.style.top = `${coord.y}px`;
+            bubble.style.opacity = (bubbles.length - index) / bubbles.length;
+        }
+    });
+
+    animationFrameId = requestAnimationFrame(animateBubbles);
+}
+
+// Stop the old animation if it's running
+if (window.animationFrameId) {
+    cancelAnimationFrame(window.animationFrameId);
+}
+animateBubbles();

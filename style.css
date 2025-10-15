@@ -25,6 +25,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 
 body {
@@ -370,26 +371,28 @@ body.dark .soft-skill:hover { background: var(--dark-primary-color); color: var(
 .contact-info h3 { margin-bottom: 20px; font-size: 1.5rem; }
 .info-item { display: flex; align-items: center; margin-bottom: 25px; }
 .info-item .icon { font-size: 1.5rem; margin-right: 15px; }
-.github-icon {
-  color: #333;
-  transition: color 0.3s;
-}
-.github-link {
-  color: #333;
+.contact-info .info-item a {
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
-.github-link:hover, .github-icon:hover {
+
+.contact-info .info-item .icon {
+    transition: color 0.3s;
+}
+
+.contact-info .info-item a:hover,
+.contact-info .info-item:hover .icon {
   color: var(--primary-color);
 }
-body.dark .github-icon {
-  color: #c9d1d9;
+
+body.dark .contact-info .info-item a {
+  color: var(--dark-text-color);
 }
-body.dark .github-link {
-  color: #c9d1d9;
-}
-body.dark .github-link:hover, body.dark .github-icon:hover {
+
+body.dark .contact-info .info-item:hover .icon,
+body.dark .contact-info .info-item a:hover {
   color: var(--dark-primary-color);
 }
 
@@ -462,4 +465,38 @@ body.dark .btn-submit:hover { background: var(--dark-secondary-color); }
   .nav-right {
     /* Styles for when menu is open */
   }
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+}
+
+.cursor-outline {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    transition: all 0.2s ease-out;
+}
+
+.cursor-bubble {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    background-color: var(--primary-color);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
