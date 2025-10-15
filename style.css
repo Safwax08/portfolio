@@ -456,47 +456,86 @@ body.dark .btn-submit:hover { background: var(--dark-secondary-color); }
 
 @media (max-width: 768px) {
   .hero-text h1 { font-size: 3rem; }
-  .nav-links { display: none; } /* Hide links by default */
+
   .menu-toggle {
-      display: block;
-      cursor: pointer;
-      font-size: 1.8rem;
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    z-index: 1001; /* Ensure it's above the nav */
   }
-  .nav-right {
-    /* Styles for when menu is open */
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 60%;
+    height: 100vh;
+    background: var(--navbar-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.5s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    right: 0; /* Slide in */
+  }
+
+  .nav-links li {
+    margin: 25px 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
+  #theme-toggle {
+    z-index: 1001;
   }
 }
 
-.cursor-dot,
-.cursor-outline {
+/* --- UNIQUE GOOEY CURSOR --- */
+.cursor-container {
+    /* This filter creates the "gooey" effect by blurring and sharpening the elements within */
+    filter: url('#goo');
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-dot {
     position: fixed;
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 9999;
     pointer-events: none;
-}
-
-.cursor-dot {
-    width: 8px;
-    height: 8px;
     background-color: var(--primary-color);
+    width: 25px;
+    height: 25px;
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
 }
 
-.cursor-outline {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary-color);
-    transition: all 0.2s ease-out;
+/* Hover state: flattens the dot into a pill shape */
+.cursor-dot.hover {
+    width: 50px;
+    height: 10px;
+    border-radius: 10px;
 }
 
 .cursor-bubble {
     position: fixed;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    z-index: 9998;
     pointer-events: none;
     background-color: var(--primary-color);
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
 }

@@ -13,6 +13,13 @@ const navLinks = document.querySelector(".nav-links");
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
+
+// Close mobile menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
 // Add this code to your script.js file
 
 // Initialize EmailJS with your Public Key
@@ -64,57 +71,89 @@ window.onload = function() {
     }
 }
 
+// --- Gooey Cursor Setup ---
+
+// 1. Create the SVG filter for the gooey effect
+const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+svg.innerHTML = `
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </defs>`;
+document.body.appendChild(svg);
+
 const cursorDot = document.querySelector('.cursor-dot');
-const cursorOutline = document.querySelector('.cursor-outline');
 const bubbles = document.querySelectorAll('.cursor-bubble');
 
 const coords = { x: 0, y: 0 };
 const bubbleCoords = [];
 
 bubbles.forEach((bubble, index) => {
-  const size = (bubbles.length - index) * 2;
+  // Base size decreases along the trail
+  const baseSize = (bubbles.length - index) * 2.0;
+  // Add a random variation to the size for a more organic feel
+  const size = baseSize + Math.random() * 4 - 2; 
   bubble.style.width = `${size}px`;
   bubble.style.height = `${size}px`;
   bubbleCoords.push({ x: 0, y: 0 });
-  bubble.style.transitionDelay = `${index * 0.02}s`;
+
+  if (index > 0) {
+    // We don't need the 'light' class for this design
+  }
 });
 
+// --- Cursor Hover Effect ---
+const interactiveElements = document.querySelectorAll('a, button, .menu-toggle');
+
+interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => { cursorDot.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => {
+        cursorDot.classList.remove('hover');
+    });
+});
+
+
+// --- Animation Loop ---
 window.addEventListener('mousemove', function (e) {
     coords.x = e.clientX;
     coords.y = e.clientY;
 });
 
-let animationFrameId;
-
 function animateBubbles() {
     let x = coords.x;
     let y = coords.y;
 
+    // Move the main dot and outline
     cursorDot.style.left = `${x}px`;
     cursorDot.style.top = `${y}px`;
 
-    cursorOutline.style.left = `${x}px`;
-    cursorOutline.style.top = `${y}px`;
-
+    // Store a history of cursor positions
     bubbleCoords.unshift({x: x, y: y});
+    // Remove the oldest position if the array is longer than the number of bubbles
     if (bubbleCoords.length > bubbles.length) {
         bubbleCoords.pop();
     }
 
+    // Assign each bubble to a historical cursor position
     bubbles.forEach((bubble, index) => {
         const coord = bubbleCoords[index];
         if (coord) {
             bubble.style.left = `${coord.x}px`;
             bubble.style.top = `${coord.y}px`;
-            bubble.style.opacity = (bubbles.length - index) / bubbles.length;
+            
+            // Set opacity based on its position in the trail
+            const baseOpacity = (bubbles.length - index) / bubbles.length;
+            // Hide bubbles when the main cursor is hovering over an element
+            const finalOpacity = cursorDot.classList.contains('hover') ? 0 : baseOpacity;
+
+            bubble.style.opacity = finalOpacity;
         }
     });
 
-    animationFrameId = requestAnimationFrame(animateBubbles);
+    requestAnimationFrame(animateBubbles);
 }
 
-// Stop the old animation if it's running
-if (window.animationFrameId) {
-    cancelAnimationFrame(window.animationFrameId);
-}
 animateBubbles();
