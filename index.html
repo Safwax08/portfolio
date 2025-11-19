@@ -39,14 +39,13 @@
     <div class="cursor-bubble"></div>
     <div class="cursor-bubble"></div>
   </div>
+
   <!-- Animated Background -->
   <div id="star-background"></div>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="nav-left">
-      <h2>Mahammad Safwan</h2>
-    </div>
+    <div class="nav-left"><h2>Mahammad Safwan</h2></div>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -91,18 +90,33 @@
     <div class="projects-container">
       <div class="project-card">
         <h3>Bridge Management System</h3>
-        <p class="desc light">The bridge management system uses Arduino, IR sensors, and a servo motor to automate drawbridge operation, enhancing traffic management and safety with alerts like lights and buzzers.</p>
-        <p class="desc dark">Automated drawbridge using Arduino + sensors. Detects vehicles, lifts/lowers bridge, and alerts with buzzer/lights for safety.</p>
+        <p class="desc light">The bridge management system uses Arduino, IR sensors, and a servo motor to automate drawbridge operation.</p>
+        <p class="desc dark">Automated drawbridge using Arduino + sensors.</p>
       </div>
       <div class="project-card">
         <h3>Turf Management System</h3>
-        <p class="desc light">Developed a DBMS-based Turf Management System to automate booking, scheduling, and payments, ensuring secure data management, reduced errors, and improved efficiency for administrators.</p>
-        <p class="desc dark">DBMS-based turf booking system with automated scheduling, secure payments, and admin reporting for improved efficiency.</p>
+        <p class="desc light">DBMS-based system to automate booking, scheduling, and payments.</p>
+        <p class="desc dark">Automated turf booking system.</p>
       </div>
       <div class="project-card">
-        <h3>Women in Safe Environment</h3>
-        <p class="desc light">A mobile and web platform designed to enhance women’s safety. Features include an SOS button that shares live location with trusted contacts, safe route mapping, and real-time alerts.</p>
-        <p class="desc dark">Safety app with SOS alerts, live location sharing, safe route mapping, and geo-fenced danger zone notifications.</p>
+        <h3>SafeWalk AI — Safety App</h3>
+        <p class="desc light">React-based safety app with location tracking, SOS, voice activation.</p>
+        <p class="desc dark">Live tracking, SOS, voice commands.</p>
+      </div>
+      <div class="project-card">
+        <h3>Agile Feature Generator — AI Dev Tool</h3>
+        <p class="desc light">React + TypeScript tool converting specs into agile features.</p>
+        <p class="desc dark">AI-powered agile feature generator.</p>
+      </div>
+      <div class="project-card">
+        <h3>AI-Based Liver Cancer Detection (ML Project)</h3>
+        <p class="desc light">MONAI-based CT liver and tumor segmentation system deployed via FastAPI + Gradio.</p>
+        <p class="desc dark">3D U-Net/SegResNetVAE CT segmentation pipeline.</p>
+      </div>
+      <div class="project-card">
+        <h3>RC Car Project</h3>
+        <p class="desc light">Built a wireless RC car using a custom transmitter–receiver setup. Won 2nd prize in competition.</p>
+        <p class="desc dark">Wireless RC car with custom communication and motor control system.</p>
       </div>
     </div>
   </section>
@@ -113,12 +127,60 @@
     <div class="skills-layout">
         <div class="skills-category technical-skills">
             <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
-            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-python"></i> Python</span><span class="skill-percent">80%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div></div>
-            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-java"></i> Java</span><span class="skill-percent">60%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 60%;"></div></div></div>
-            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fas fa-database"></i> SQL</span><span class="skill-percent">88%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 88%;"></div></div></div>
-            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-js"></i> JavaScript</span><span class="skill-percent">50%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 50%;"></div></div></div>
-            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fa-solid fa-c"></i> C</span><span class="skill-percent">85%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div></div>
-            <div class="skill"><div class="skill-info"><span class="skill-name"><i class="fab fa-html5"></i> HTML/CSS</span><span class="skill-percent">92%</span></div><div class="progress-bar-container"><div class="progress-bar" style="width: 92%;"></div></div></div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 80%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fab fa-java"></i> Java</span>
+                <span class="skill-percent">60%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 60%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill-percent">88%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill-percent">50%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-c"></i> C</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fab fa-html5"></i> HTML/CSS</span>
+                <span class="skill-percent">92%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 92%;"></div>
+              </div>
+            </div>
         </div>
         <div class="skills-category soft-skills">
             <h3><i class="fas fa-users"></i> Soft Skills</h3>
@@ -170,13 +232,13 @@
             <p><a href="http://linkedin.com/in/mahammadsafwan" target="_blank" rel="noopener noreferrer">mahammadsafwan</a></p>
           </div>
         </div>
-          <div class="info-item">
-            <span class="icon github-icon"><i class="fab fa-github"></i></span>
-            <div>
-              <h4>GitHub</h4>
-              <p><a href="https://github.com/Safwax08" class="github-link" target="_blank" rel="noopener noreferrer">Safwax08</a></p>
-            </div>
+        <div class="info-item">
+          <span class="icon github-icon"><i class="fab fa-github"></i></span>
+          <div>
+            <h4>GitHub</h4>
+            <p><a href="https://github.com/Safwax08" class="github-link" target="_blank" rel="noopener noreferrer">Safwax08</a></p>
           </div>
+        </div>
       </div>
 
       <div class="contact-form-card">
