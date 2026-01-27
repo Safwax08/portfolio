@@ -392,19 +392,15 @@ body.dark .contact-form-card {
 }
 
 .project-card h3 {
-  color: #00d4ff;
+  color: #00ffcc;
   margin-bottom: 15px;
   font-size: 1.4rem;
   text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
-body.dark .project-car font-size: 0.95rem;
-line-height: 1.6;
-display: none;
-color: #ffffff;
-
-color: #00d4ff;
-text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+body.dark .project-card h3 {
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
 }
 
 .project-card .desc {
